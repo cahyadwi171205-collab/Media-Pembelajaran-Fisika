@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Pembelajaran Fisika - Pengukuran</title>
+  
+  <!-- Font & Ikon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;0,800;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- CSS dari folder css/ -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  
+  <!-- Fallback biar background nggak putih kalau CSS gagal load -->
+  <style>body{background:#0B1426!important}</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div id="progress-bar" style="width:0%"></div>
+
+<button id="menu-toggle" aria-label="Menu navigasi"><i class="fas fa-bars"></i></button>
+<div id="sidebar-overlay"></div>
+
+<nav id="sidebar">
+  <div class="sidebar-title">Navigasi Materi</div>
+  <div class="nav-item active" data-slide="1"><span class="nav-num">1</span>Sampul</div>
+  <div class="nav-item" data-slide="2"><span class="nav-num">2</span>Tujuan Pembelajaran</div>
+  <div class="nav-item" data-slide="3"><span class="nav-num">3</span>Petunjuk Penggunaan</div>
+  <div class="nav-item" data-slide="4"><span class="nav-num">4</span>Kegiatan Sehari-hari</div>
+  <div class="nav-item" data-slide="5"><span class="nav-num">5</span>Pertanyaan Pemantik</div>
+  <div class="nav-item" data-slide="6"><span class="nav-num">6</span>Pengenalan Alat Ukur</div>
+  <div class="nav-item" data-slide="7"><span class="nav-num">7</span>Simulasi Mistar</div>
+  <div class="nav-item" data-slide="8"><span class="nav-num">8</span>Simulasi Jangka Sorong</div>
+  <div class="nav-item" data-slide="9"><span class="nav-num">9</span>Simulasi Mikrometer</div>
+  <div class="nav-item" data-slide="10"><span class="nav-num">10</span>Pembacaan Mikrometer</div>
+  <div class="nav-item" data-slide="11"><span class="nav-num">11</span>Perhitungan Hasil Ukur</div>
+  <div class="nav-item" data-slide="12"><span class="nav-num">12</span>Latihan Membaca (1)</div>
+  <div class="nav-item" data-slide="13"><span class="nav-num">13</span>Latihan Membaca (2)</div>
+  <div class="nav-item" data-slide="14"><span class="nav-num">14</span>Pembahasan (1)</div>
+  <div class="nav-item" data-slide="15"><span class="nav-num">15</span>Pembahasan (2)</div>
+  <div class="nav-item" data-slide="16"><span class="nav-num">16</span>Kesalahan Pengukuran</div>
+  <div class="nav-item" data-slide="17"><span class="nav-num">17</span>Kesimpulan</div>
+  <div class="nav-item" data-slide="18"><span class="nav-num">18</span>Ringkasan Materi</div>
+  <div class="nav-item" data-slide="19"><span class="nav-num">19</span>Game Alat Ukur</div>
+  <div class="nav-item" data-slide="20"><span class="nav-num">20</span>Evaluasi</div>
+  <div class="nav-item" data-slide="21"><span class="nav-num">21</span>Referensi</div>
+</nav>
+
+<main id="slides-wrapper">
+
+  <!-- SLIDE 1: SAMPUL -->
+  <section id="slide-1" class="slide active">
+    <div class="slide-inner cover-container">
+      <div class="cover-badge anim-item"><i class="fas fa-atom"></i> Media Pembelajaran Interaktif</div>
+      <h1 class="cover-title anim-item">PEMBUATAN MEDIA ANIMASI PEMBELAJARAN FISIKA BERBASIS <span class="highlight">DISCOVERY LEARNING</span> PADA MATERI <span class="highlight">PENGUKURAN</span> UNTUK SISWA SMA</h1>
+      <p class="cover-author anim-item">Disusun oleh: <strong>Cahya Dwi Nurika</strong></p>
+      <div class="cover-illustration anim-item">
+        <div class="tool-icon-box anim-float" style="animation-delay:0s"><i class="fas fa-ruler"></i><span>Mistar</span></div>
+        <div class="tool-icon-box anim-float" style="animation-delay:.4s"><i class="fas fa-ruler-combined"></i><span>Jangka Sorong</span></div>
+        <div class="tool-icon-box anim-float" style="animation-delay:.8s"><i class="fas fa-microscope"></i><span>Mikrometer</span></div>
+        <div class="tool-icon-box anim-float" style="animation-delay:1.2s"><i class="fas fa-balance-scale"></i><span>Neraca</span></div>
+        <div class="tool-icon-box anim-float" style="animation-delay:1.6s"><i class="fas fa-stopwatch"></i><span>Stopwatch</span></div>
+        <div class="tool-icon-box anim-float" style="animation-delay:2s"><i class="fas fa-thermometer-half"></i><span>Termometer</span></div>
+      </div>
+      <button class="cover-start-btn anim-item" onclick="goToSlide(2)">Mulai Pembelajaran <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: TUJUAN -->
+  <section id="slide-2" class="slide">
+    <div class="slide-inner">
+      <div class="section-label anim-item">Slide 2</div>
+      <h2 class="slide-title anim-item">Tujuan Pembelajaran</h2>
+      <p class="slide-subtitle anim-item">Capaian yang diharapkan setelah mempelajari materi pengukuran</p>
+      <div class="grid-2">
+        <div class="content-card anim-item">
+          <h3><i class="fas fa-bullseye" style="margin-right:8px"></i>Tujuan Umum</h3>
+          <p>Siswa mampu memahami konsep pengukuran, menggunakan alat ukur dengan tepat, dan menyatakan hasil pengukuran dengan benar sesuai ketelitian alat ukur yang digunakan.</p>
+        </div>
+        <div class="content-card anim-item">
+          <h3><i class="fas fa-list-check" style="margin-right:8px"></i>Tujuan Khusus</h3>
+          <ul>
+            <li>Menjelaskan pengertian besaran dan satuan</li>
+            <li>Mengidentifikasi alat ukur besaran pokok dan turunan</li>
+            <li>Menggunakan mistar, jangka sorong, dan mikrometer sekrup</li>
+            <li>Membaca hasil pengukuran dengan ketelitian alat ukur</li>
+            <li>Menyatakan hasil pengukuran dengan penulisan SI yang benar</li>
+            <li>Menganalisis kesalahan dalam pengukuran</li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-card anim-item" style="border-left:3px solid var(--accent)">
+        <h3><i class="fas fa-lightbulb" style="margin-right:8px"></i>Pendekatan Discovery Learning</h3>
+        <p>Media ini dirancang dengan pendekatan <span class="accent-text">Discovery Learning</span> di mana siswa mengonstruksi pengetahuan melalui proses: <strong>Stimulasi → Identifikasi Masalah → Pengumpulan Data → Pengolahan Data → Verifikasi → Kesimpulan</strong>. Simulasi interaktif memungkinkan siswa menemukan sendiri cara membaca alat ukur.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 3 s/d 21 (Sengaja dipadatkan biar nggak kepanjangan di sini, tapi fungsionalitasnya sama persis) -->
+  
+  <section id="slide-3" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 3</div><h2 class="slide-title anim-item">Petunjuk Penggunaan</h2><p class="slide-subtitle anim-item">Cara menggunakan media animasi ini</p><div class="grid-2"><div class="content-card anim-item"><h3><i class="fas fa-compass" style="margin-right:8px"></i>Navigasi</h3><ul><li><span class="accent-text">Tombol panah</span> atau keyboard untuk pindah slide</li><li><span class="accent-text">Tombol menu</span> di kiri atas untuk buka sidebar</li><li>Gunakan sidebar untuk lompat ke slide manapun</li></ul></div><div class="content-card anim-item"><h3><i class="fas fa-hand-pointer" style="margin-right:8px"></i>Simulasi</h3><ul><li><span class="accent-text">Klik dan geser</span> pada alat ukur untuk mengukur</li><li>Pembacaan skala berubah <span class="accent-text">real-time</span></li><li>Tombol <span class="accent-text">Reset</span> & <span class="accent-text">Acak</span> tersedia di bawah simulasi</li></ul></div></div></div></section>
+
+  <section id="slide-4" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 4</div><h2 class="slide-title anim-item">Kegiatan Sehari-hari</h2><p class="slide-subtitle anim-item">Pengukuran ada di mana-mana</p><div class="activity-scene anim-item"><div class="activity-icon"><i class="fas fa-ruler-horizontal"></i></div><div><h4>Mengukur Panjang Meja</h4><p>Mistar atau pita ukur digunakan untuk memastikan taplak meja pas ukurannya.</p></div></div><div class="activity-scene anim-item"><div class="activity-icon"><i class="fas fa-weight-hanging"></i></div><div><h4>Mengukur Massa Makanan</h4><p>Neraca dapur digunakan untuk mengukur 250 gram tepung sesuai resep.</p></div></div><div class="activity-scene anim-item"><div class="activity-icon"><i class="fas fa-clock"></i></div><div><h4>Mengukur Waktu</h4><p>Stopwatch mengukur lama perjalanan dari rumah ke sekolah.</p></div></div><div class="activity-scene anim-item"><div class="activity-icon"><i class="fas fa-temperature-high"></i></div><div><h4>Mengukur Suhu Tubuh</h4><p>Termometer menunjukkan suhu tubuh, normalnya 36,5–37,5°C.</p></div></div></div></section>
+
+  <section id="slide-5" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 5</div><h2 class="slide-title anim-item">Pertanyaan Pemantik</h2><div class="big-question anim-item"><div class="q-number">1</div>Mengapa hasil pengukuran panjang meja oleh tiga orang bisa berbeda?</div><div class="big-question anim-item"><div class="q-number">2</div>Bagaimana cara membaca alat ukur dengan tepat dan konsisten?</div><div class="content-card anim-item" style="border-left:3px solid var(--steel);margin-top:24px"><h3>Refleksi</h3><p>Setiap pengukuran selalu mengandung <span class="accent-text">ketidakpastian</span>. Faktornya: ketelitian alat, cara membaca, dan kondisi lingkungan.</p></div></div></section>
+
+  <section id="slide-6" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 6</div><h2 class="slide-title anim-item">Pengenalan Alat Ukur</h2><div class="grid-4 anim-item"><div class="tool-card" onclick="goToSlide(7)"><div class="tool-visual"><i class="fas fa-ruler" style="font-size:48px;color:var(--accent)"></i></div><h3>Mistar</h3><p>Panjang benda</p><div class="tool-lc">Ketelitian: 0,5 mm</div></div><div class="tool-card" onclick="goToSlide(8)"><div class="tool-visual"><i class="fas fa-ruler-combined" style="font-size:48px;color:var(--steel)"></i></div><h3>Jangka Sorong</h3><p>Diameter & kedalaman</p><div class="tool-lc">Ketelitian: 0,1 mm</div></div><div class="tool-card" onclick="goToSlide(9)"><div class="tool-visual"><i class="fas fa-microscope" style="font-size:48px;color:#C06ADE"></i></div><h3>Mikrometer</h3><p>Benda kecil/kawat</p><div class="tool-lc">Ketelitian: 0,01 mm</div></div><div class="tool-card"><div class="tool-visual"><i class="fas fa-balance-scale" style="font-size:48px;color:#34D399"></i></div><h3>Neraca</h3><p>Massa benda</p><div class="tool-lc">Berbagai ketelitian</div></div></div></div></section>
+
+  <!-- SLIDE 7: SIMULASI MISTAR -->
+  <section id="slide-7" class="slide">
+    <div class="slide-inner">
+      <div class="section-label anim-item">Slide 7 — Simulasi</div>
+      <h2 class="slide-title anim-item">Simulasi Penggunaan Mistar</h2>
+      <p class="slide-subtitle anim-item">Geser benda biru untuk mengukur panjangnya</p>
+      <canvas id="ruler-canvas" class="sim-canvas anim-item" width="800" height="240"></canvas>
+      <div class="sim-reading anim-item" id="ruler-reading">0,0 mm<small>Hasil Pembacaan Mistar</small></div>
+      <div class="sim-controls anim-item">
+        <button class="sim-btn" onclick="resetRuler()">Reset Posisi</button>
+        <button class="sim-btn" onclick="acakMistar()">Acak Benda</button>
+      </div>
+      <div class="content-card anim-item" style="margin-top:20px"><h3>Cara Membaca Mistar</h3><ul><li>Ujung kiri benda tepat pada angka <span class="accent-text">0</span></li><li>Baca skala di ujung kanan benda</li><li>Ketelitian mistar = <span class="accent-text">0,5 mm</span> (setengah skala terkecil)</li></ul></div>
+    </div>
+  </section>
+
+  <!-- SLIDE 8: SIMULASI JANGKA SORONG -->
+  <section id="slide-8" class="slide">
+    <div class="slide-inner">
+      <div class="section-label anim-item">Slide 8 — Simulasi</div>
+      <h2 class="slide-title anim-item">Simulasi Jangka Sorong</h2>
+      <p class="slide-subtitle anim-item">Geser rahang kanan untuk mengukur benda</p>
+      <canvas id="caliper-canvas" class="sim-canvas anim-item" width="800" height="280"></canvas>
+      <div class="sim-reading anim-item" id="caliper-reading">0,00 mm<small>Skala Utama + Skala Nonius</small></div>
+      <div class="sim-controls anim-item">
+        <button class="sim-btn" onclick="resetJangka()">Reset Posisi</button>
+        <button class="sim-btn" onclick="acakJangka()">Acak Ukuran</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 9: SIMULASI MIKROMETER -->
+  <section id="slide-9" class="slide">
+    <div class="slide-inner">
+      <div class="section-label anim-item">Slide 9 — Simulasi</div>
+      <h2 class="slide-title anim-item">Simulasi Mikrometer Sekrup</h2>
+      <p class="slide-subtitle anim-item">Geser slider di area thimble untuk memutar</p>
+      <canvas id="micrometer-canvas" class="sim-canvas anim-item" width="700" height="340"></canvas>
+      <div class="sim-reading anim-item" id="micrometer-reading">0,00 mm<small>Skala Utama + Skala Putar</small></div>
+      <div class="sim-controls anim-item">
+        <button class="sim-btn" onclick="resetMikro()">Reset Posisi</button>
+        <button class="sim-btn" onclick="acakMikro()">Acak Ukuran</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 10-16: MATERI (Dipadatkan tapi konten tetap utuh) -->
+  <section id="slide-10" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 10</div><h2 class="slide-title anim-item">Membaca Mikrometer Sekrup</h2><div class="discussion-step anim-item"><div class="step-num">1</div><div class="step-content"><h4>Baca Skala Utama (Sleeve)</h4><p>Skala atas = <strong>mm utuh</strong>, skala bawah = <strong>0,5 mm</strong>.</p></div></div><div class="discussion-step anim-item"><div class="step-num">2</div><div class="step-content"><h4>Baca Skala Putar (Thimble)</h4><p>Garis yang segaris dikalikan <strong>0,01 mm</strong>.</p></div></div><div class="discussion-step anim-item"><div class="step-num">3</div><div class="step-content"><h4>Jumlahkan</h4><p><span class="formula">Hasil = Skala Utama + (Skala Putar × 0,01 mm)</span></p></div></div></div></section>
+
+  <section id="slide-11" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 11</div><h2 class="slide-title anim-item">Perhitungan Hasil Ukur</h2><div class="content-card anim-item"><h3>Format Penulisan</h3><p style="text-align:center;font-size:18px;margin:16px 0"><span class="formula">Hasil = (Nilai ± Ketidakpastian) Satuan</span></p></div><div class="grid-2 anim-item"><div class="content-card"><h3>Contoh: Mistar</h3><p>Ujung kanan di 18,5 cm. Ketelitian 0,05 cm.</p><p>Hasil: <span class="accent-text">(18,50 ± 0,05) cm</span></p></div><div class="content-card"><h3>Contoh: Jangka Sorong</h3><p>Skala utama 24 mm, nonius ke-7 (0,7 mm).</p><p>Hasil: <span class="accent-text">(24,7 ± 0,1) mm</span></p></div></div></div></section>
+
+  <section id="slide-12" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 12 — Latihan</div><h2 class="slide-title anim-item">Latihan Membaca Alat Ukur</h2><div class="quiz-question anim-item" id="quiz-1"><h4>Soal 1: Hasil pembacaan jangka sorong berikut?</h4><canvas id="quiz-canvas-1" class="sim-canvas" width="700" height="180"></canvas><div class="quiz-options"><div class="quiz-option" data-answer="A" onclick="pilihOpsi(this,'quiz-1')"><span class="opt-letter">A</span> 2,35 mm</div><div class="quiz-option" data-answer="B" onclick="pilihOpsi(this,'quiz-1')"><span class="opt-letter">B</span> 23,5 mm</div><div class="quiz-option" data-answer="C" onclick="pilihOpsi(this,'quiz-1')"><span class="opt-letter">C</span> 2,30 mm</div><div class="quiz-option" data-answer="D" onclick="pilihOpsi(this,'quiz-1')"><span class="opt-letter">D</span> 23,0 mm</div></div><div class="quiz-feedback" id="fb-quiz-1"></div></div><div class="quiz-question anim-item" id="quiz-2"><h4>Soal 2: Hasil pembacaan mikrometer sekrup berikut?</h4><canvas id="quiz-canvas-2" class="sim-canvas" width="500" height="180"></canvas><div class="quiz-options"><div class="quiz-option" data-answer="A" onclick="pilihOpsi(this,'quiz-2')"><span class="opt-letter">A</span> 3,27 mm</div><div class="quiz-option" data-answer="B" onclick="pilihOpsi(this,'quiz-2')"><span class="opt-letter">B</span> 3,77 mm</div><div class="quiz-option" data-answer="C" onclick="pilihOpsi(this,'quiz-2')"><span class="opt-letter">C</span> 3,72 mm</div><div class="quiz-option" data-answer="D" onclick="pilihOpsi(this,'quiz-2')"><span class="opt-letter">D</span> 3,22 mm</div></div><div class="quiz-feedback" id="fb-quiz-2"></div></div><div style="text-align:center;margin-top:20px" class="anim-item"><button class="check-btn" onclick="cekQuiz12()">Periksa Jawaban</button></div></div></section>
+
+  <section id="slide-13" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 13 — Latihan</div><h2 class="slide-title anim-item">Latihan Membaca (Lanjutan)</h2><div class="quiz-question anim-item" id="quiz-3"><h4>Soal 3: Panjang pensil 14,7 cm di mistar. Hasil yang benar...</h4><div class="quiz-options"><div class="quiz-option" data-answer="A" onclick="pilihOpsi(this,'quiz-3')"><span class="opt-letter">A</span> (14,70 ± 0,05) cm</div><div class="quiz-option" data-answer="B" onclick="pilihOpsi(this,'quiz-3')"><span class="opt-letter">B</span> (14,7 ± 0,5) cm</div><div class="quiz-option" data-answer="C" onclick="pilihOpsi(this,'quiz-3')"><span class="opt-letter">C</span> (14,70 ± 0,5) mm</div><div class="quiz-option" data-answer="D" onclick="pilihOpsi(this,'quiz-3')"><span class="opt-letter">D</span> (147,0 ± 0,5) mm</div></div><div class="quiz-feedback" id="fb-quiz-3"></div></div><div class="quiz-question anim-item" id="quiz-4"><h4>Soal 4: Skala utama 4,7 cm, nonius ke-8 segaris. Hasilnya...</h4><div class="quiz-options"><div class="quiz-option" data-answer="A" onclick="pilihOpsi(this,'quiz-4')"><span class="opt-letter">A</span> 47,8 mm</div><div class="quiz-option" data-answer="B" onclick="pilihOpsi(this,'quiz-4')"><span class="opt-letter">B</span> 4,78 cm</div><div class="quiz-option" data-answer="C" onclick="pilihOpsi(this,'quiz-4')"><span class="opt-letter">C</span> 4,708 cm</div><div class="quiz-option" data-answer="D" onclick="pilihOpsi(this,'quiz-4')"><span class="opt-letter">D</span> 47,08 mm</div></div><div class="quiz-feedback" id="fb-quiz-4"></div></div><div style="text-align:center;margin-top:20px" class="anim-item"><button class="check-btn" onclick="cekQuiz13()">Periksa Jawaban</button></div></div></section>
+
+  <section id="slide-14" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 14</div><h2 class="slide-title anim-item">Pembahasan (1)</h2><div class="discussion-step anim-item"><div class="step-num">1</div><div class="step-content"><h4>Soal 1: Jangka Sorong</h4><p>Skala utama: 23 mm. Nonius ke-5: 0,5 mm.</p><p class="formula">23 + 0,5 = 23,5 mm → <span class="accent-text">B</span></p></div></div><div class="discussion-step anim-item"><div class="step-num">2</div><div class="step-content"><h4>Soal 2: Mikrometer</h4><p>Skala utama: 3,5 mm. Putar ke-27: 0,27 mm.</p><p class="formula">3,5 + 0,27 = 3,77 mm → <span class="accent-text">B</span></p></div></div></div></section>
+
+  <section id="slide-15" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 15</div><h2 class="slide-title anim-item">Pembahasan (2)</h2><div class="discussion-step anim-item"><div class="step-num">3</div><div class="step-content"><h4>Soal 3: Mistar</h4><p class="formula">(14,70 ± 0,05) cm → <span class="accent-text">A</span></p></div></div><div class="discussion-step anim-item"><div class="step-num">4</div><div class="step-content"><h4>Soal 4: Jangka Sorong</h4><p class="formula">47 + 0,8 = 47,8 mm = 4,78 cm → <span class="accent-text">B</span></p></div></div></div></section>
+
+  <section id="slide-16" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 16</div><h2 class="slide-title anim-item">Kesalahan Pengukuran</h2><div class="grid-2 anim-item"><div class="content-card"><h3><i class="fas fa-times-circle" style="margin-right:8px;color:var(--error)"></i>Sistematis</h3><ul><li>Kesalahan nol</li><li>Kesalahan kalibrasi</li><li>Kesalahan parallax</li></ul></div><div class="content-card"><h3><i class="fas fa-random" style="margin-right:8px;color:var(--steel)"></i>Acak</h3><ul><li>Variasi pengamat</li><li>Kondisi lingkungan</li><li>Keterbatasan alat</li></ul></div></div></div></section>
+
+  <!-- SLIDE 17-21 -->
+  <section id="slide-17" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 17</div><h2 class="slide-title anim-item">Kesimpulan</h2><div class="summary-point anim-item"><div class="sp-icon"><i class="fas fa-book"></i></div><div><h4>Besaran dan Satuan</h4><p>Besaran pokok ada 7: panjang (m), massa (kg), waktu (s), arus (A), suhu (K), jumlah zat (mol), intensitas cahaya (cd).</p></div></div><div class="summary-point anim-item"><div class="sp-icon"><i class="fas fa-ruler-combined"></i></div><div><h4>Ketelitian</h4><p>Mistar: 0,5 mm. Jangka sorong: 0,1 mm. Mikrometer: 0,01 mm.</p></div></div><div class="summary-point anim-item"><div class="sp-icon"><i class="fas fa-pen-fancy"></i></div><div><h4>Hasil Ukur</h4><p>Selalu sertai ketidakpastian: (Nilai ± Δx) Satuan.</p></div></div></div></section>
+
+  <section id="slide-18" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 18</div><h2 class="slide-title anim-item">Ringkasan</h2><div class="grid-3 anim-item"><div class="content-card" style="text-align:center"><i class="fas fa-ruler" style="font-size:40px;color:var(--accent);margin-bottom:12px"></i><h3>Mistar</h3><p>Ketelitian: <strong>0,5 mm</strong></p></div><div class="content-card" style="text-align:center"><i class="fas fa-ruler-combined" style="font-size:40px;color:var(--steel);margin-bottom:12px"></i><h3>Jangka Sorong</h3><p>Ketelitian: <strong>0,1 mm</strong></p></div><div class="content-card" style="text-align:center"><i class="fas fa-microscope" style="font-size:40px;color:#C06ADE;margin-bottom:12px"></i><h3>Mikrometer</h3><p>Ketelitian: <strong>0,01 mm</strong></p></div></div></div></section>
+
+  <section id="slide-19" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 19 — Game</div><h2 class="slide-title anim-item">Game: Pilih Alat Ukur</h2><div class="game-area anim-item"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><div>Skor: <span class="game-score" id="game-score">0</span><small> / <span id="game-total">5</span></small></div><div>Soal: <span id="game-current">1</span>/5</div></div><div class="game-timer"><div class="game-timer-fill" id="game-timer-fill" style="width:100%"></div></div><div class="game-scenario" id="game-scenario">Memuat...</div><div class="game-choices" id="game-choices"></div><div id="game-feedback" style="margin-top:16px;font-size:15px;min-height:24px"></div><button class="check-btn" id="game-next-btn" style="margin-top:16px;display:none" onclick="soalBerikutnya()">Soal Berikutnya</button></div></div></section>
+
+  <section id="slide-20" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 20 — Evaluasi</div><h2 class="slide-title anim-item">Evaluasi Akhir</h2><div class="quiz-question anim-item" id="eval-1"><h4>1. Ketelitian jangka sorong 50 garis nonius adalah...</h4><div class="quiz-options"><div class="quiz-option" data-answer="A" onclick="pilihOpsi(this,'eval-1')"><span class="opt-letter">A</span> 0,1 mm</div><div class="quiz-option" data-answer="B" onclick="pilihOpsi(this,'eval-1')"><span class="opt-letter">B</span> 0,02 mm</div><div class="quiz-option" data-answer="C" onclick="pilihOpsi(this,'eval-1')"><span class="opt-letter">C</span> 0,05 mm</div><div class="quiz-option" data-answer="D" onclick="pilihOpsi(this,'eval-1')"><span class="opt-letter">D</span> 0,01 mm</div></div></div><div class="quiz-question anim-item" id="eval-2"><h4>2. Skala utama 7,5 mm dan skala putar ke-42 adalah...</h4><div class="quiz-options"><div class="quiz-option" data-answer="A" onclick="pilihOpsi(this,'eval-2')"><span class="opt-letter">A</span> 7,92 mm</div><div class="quiz-option" data-answer="B" onclick="pilihOpsi(this,'eval-2')"><span class="opt-letter">B</span> 7,42 mm</div><div class="quiz-option" data-answer="C" onclick="pilihOpsi(this,'eval-2')"><span class="opt-letter">C</span> 7,920 mm</div><div class="quiz-option" data-answer="D" onclick="pilihOpsi(this,'eval-2')"><span class="opt-letter">D</span> 7,042 mm</div></div></div><div class="quiz-question anim-item" id="eval-3"><h4>3. Yang BUKAN kesalahan sistematis?</h4><div class="quiz-options"><div class="quiz-option" data-answer="A" onclick="pilihOpsi(this,'eval-3')"><span class="opt-letter">A</span> Kesalahan nol</div><div class="quiz-option" data-answer="B" onclick="pilihOpsi(this,'eval-3')"><span class="opt-letter">B</span> Kesalahan parallax</div><div class="quiz-option" data-answer="C" onclick="pilihOpsi(this,'eval-3')"><span class="opt-letter">C</span> Variasi cara baca</div><div class="quiz-option" data-answer="D" onclick="pilihOpsi(this,'eval-3')"><span class="opt-letter">D</span> Kesalahan kalibrasi</div></div></div><div style="text-align:center;margin-top:20px" class="anim-item"><button class="check-btn" onclick="cekEvaluasi()">Kirim Evaluasi</button></div><div class="eval-result anim-item" id="eval-result"><h3 style="font-family:var(--font-display);font-size:22px;margin-bottom:8px">Hasil Evaluasi</h3><div class="score-big" id="eval-score">0</div><p style="color:var(--text-muted)">dari 3 soal PG</p></div></div></section>
+
+  <section id="slide-21" class="slide"><div class="slide-inner"><div class="section-label anim-item">Slide 21</div><h2 class="slide-title anim-item">Referensi</h2><p class="slide-subtitle anim-item">Sumber pustaka (APA Style)</p><div class="ref-item anim-item"><span class="ref-author">Halliday, D., Resnick, R., & Walker, J.</span> (<span class="ref-year">2018</span>). <span class="ref-title">Fundamentals of physics</span> (11th ed.). <span class="ref-source">John Wiley &amp; Sons.</span></div><div class="ref-item anim-item"><span class="ref-author">Kanginan, M.</span> (<span class="ref-year">2019</span>). <span class="ref-title">Fisika untuk SMA/MA kelas X</span>. <span class="ref-source">Erlangga.</span></div><div class="ref-item anim-item"><span class="ref-author">Young, H. D., & Freedman, R. A.</span> (<span class="ref-year">2019</span>). <span class="ref-title">University physics with modern physics</span> (15th ed.). <span class="ref-source">Pearson Education.</span></div><div class="ref-item anim-item"><span class="ref-author">Trianto, T.</span> (<span class="ref-year">2021</span>). <span class="ref-title">Model pembelajaran terpadu dalam teori dan praktik</span>. <span class="ref-source">Prestasi Pustaka.</span></div></div></section>
+
+</main>
+
+<div id="bottom-nav">
+  <button class="nav-btn" id="btn-prev" onclick="prevSlide()" disabled><i class="fas fa-chevron-left"></i> Sebelumnya</button>
+  <div id="slide-counter"><span>1</span> / 21</div>
+  <button class="nav-btn" id="btn-next" onclick="nextSlide()">Selanjutnya <i class="fas fa-chevron-right"></i></button>
+</div>
+
+<!-- JS dari folder js/ (urutan penting! app.js dulu) -->
+<script src="js/app.js"></script>
+<script src="js/simulations.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>
